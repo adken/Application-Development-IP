@@ -22,5 +22,9 @@
     
   Source: https://www.gis-tutorials.net/blog/remote-sensing-indices-and-their-calculations-ndvi-ndwi-evi-savi-ndbi-mndwi-ibi/
     
-- Implement slider and user input of chessboard and threshold
+- Implement index-based image classification using multi-threshold segmentation
+  - predefine classes; water for NDWI, vegetation for NDVI, urban areas for NDBI
+  - segmentation slider for respective thresholds
+  - merging objects for respective classes
+  - export resulting classes to vector format
 
