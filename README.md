@@ -20,7 +20,7 @@
   - Normalized Difference Water Index (NDWI) (nir - swir)/ (nir + swir) <br>
     The Normalized Difference Water Index (NDWI) measures the change in water content of leaves using near-infrared (NIR) and short-wave infrared (SWIR) wavelengths,         NDWI is used to analyze vegetation's water content because of its sensitivity to the water content of vegetation and water bodies. 
     
-    Source: https://www.gis-tutorials.net/blog/remote-sensing-indices-and-their-calculations-ndvi-ndwi-evi-savi-ndbi-mndwi-ibi/
+  Source: https://www.gis-tutorials.net/blog/remote-sensing-indices-and-their-calculations-ndvi-ndwi-evi-savi-ndbi-mndwi-ibi/
     
 - Implement slider and user input of chessboard and threshold
 
