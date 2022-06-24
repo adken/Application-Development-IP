@@ -8,7 +8,7 @@
 - Implement index calculation
   - Normalized Difference Vegetattion Index (NDVI) (nir - red)/(nir + red)
     
-  - Normalized Difference Builtup Index (NDBI) ()/()
+  - Normalized Difference Builtup Index (NDBI) ()/() <br>
     The Normalized Difference Built-Up Index is used to extract the built-up areas in urban areas automatically.
 - Implement slider and user input of chessboard and threshold
 
