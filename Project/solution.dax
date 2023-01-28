@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Analysis product="" name="" author="" company="" engine-version="10.2.1" read-only="0" Action-Library-GUID="97E1386B-17C1-11ED-99DF-548CA087852E" Action-library-Version="1.">
+	<Description></Description>
+	<eCog.Proc UserName="Adken" Company="" Copyright="" version="20181002" use-reproducable-poly="1" project-unit="5" engine-version="10.2.1" engine-build="116" update-topology="0" distance_calculation="CG" resampling_compatibility="0">
+		<ruleset-info>
+			<name></name>
+			<author>TIEDE</author>
+			<tags></tags>
+			<version></version>
+			<description></description>
+			<input></input>
+			<output></output>
+		</ruleset-info>
+		<ParamValueSetCntnr>
+			<ParamValueSet Name="Parameter Set Import"></ParamValueSet>
+			<ParamValueSet Name="Parameter Set Vegetation">
+				<ParamValue name="var_nir" description="" type="variable">
+					<DValue type="img_chnl" value="Layer 4" scope=""></DValue>
+					<Variable>
+						<DValue type="rlstObjId" obj_type="img_layer" scope="" obj_name="var_nir"></DValue>
+					</Variable>
+				</ParamValue>
+				<ParamValue name="var_red" description="" type="variable">
+					<DValue type="img_chnl" value="Layer 3" scope=""></DValue>
+					<Variable>
+						<DValue type="rlstObjId" obj_type="img_layer" scope="" obj_name="var_red"></DValue>
+					</Variable>
+				</ParamValue>
+				<ParamValue name="th_veg" description="" type="variable">
+					<DValue value="0.26000000000000000888178419700125232339" type="double"></DValue>
+					<Variable>
+						<DValue value="0" type="procVarId"></DValue>
+					</Variable>
+				</ParamValue>
+			</ParamValueSet>
+			<ParamValueSet Name="Parameter Set Water">
+				<ParamValue name="var_nir" description="" type="variable">
+					<DValue type="img_chnl" value="Layer 4" scope=""></DValue>
+					<Variable>
+						<DValue type="rlstObjId" obj_type="img_layer" scope="" obj_name="var_nir"></DValue>
+					</Variable>
+				</ParamValue>
+				<ParamValue name="var_green" description="" type="variable">
+					<DValue type="img_chnl" value="Layer 2" scope=""></DValue>
+					<Variable>
+						<DValue type="rlstObjId" obj_type="img_layer" scope="" obj_name="var_green"></DValue>
+					</Variable>
+				</ParamValue>
+				<ParamValue name="th_water" description="" type="variable">
+					<DValue value="0.27000000000000001776356839400250464678" type="double"></DValue>
+					<Variable>
+						<DValue value="1" type="procVarId"></DValue>
+					</Variable>
+				</ParamValue>
+			</ParamValueSet>
+			<ParamValueSet Name="Parameter Set Built-up">
+				<ParamValue name="var_nir" description="" type="variable">
+					<DValue type="img_chnl" value="Layer 4" scope=""></DValue>
+					<Variable>
+						<DValue type="rlstObjId" obj_type="img_layer" scope="" obj_name="var_nir"></DValue>
+					</Variable>
+				</ParamValue>
+				<ParamValue name="var_swir" description="" type="variable">
+					<DValue type="img_chnl" value="Layer 5" scope=""></DValue>
+					<Variable>
+						<DValue type="rlstObjId" obj_type="img_layer" scope="" obj_name="var_swir"></DValue>
+					</Variable>
+				</ParamValue>
+				<ParamValue name="th_built" description="" type="variable">
+					<DValue value="0.11000000000000000055511151231257827021" type="double"></DValue>
+					<Variable>
+						<DValue value="2" type="procVarId"></DValue>
+					</Variable>
+				</ParamValue>
+			</ParamValueSet>
+			<ParamValueSet Name="Parameter Set Barren">
+				<ParamValue name="var_blue" description="" type="variable">
+					<DValue type="img_chnl" value="Layer 1" scope=""></DValue>
+					<Variable>
+						<DValue type="rlstObjId" obj_type="img_layer" scope="" obj_name="var_blue"></DValue>
+					</Variable>
+				</ParamValue>
+				<ParamValue name="th_barren" description="" type="variable">
+					<DValue value="2.9999999999999998889776975374843459576e-002" type="double"></DValue>
+					<Variable>
+						<DValue value="3" type="procVarId"></DValue>
+					</Variable>
+				</ParamValue>
+			</ParamValueSet>
+			<ParamValueSet Name="Parameter Set Export">
+				<ParamValue name="export_string_var}" description="" type="variable">
+					<DValue value="D:\" type="string"></DValue>
+					<Variable>
+						<DValue value="5" type="procVarId"></DValue>
+					</Variable>
+				</ParamValue>
+				<ParamValue name="export_string_var" description="" type="variable">
+					<DValue value="D:\" type="string"></DValue>
+					<Variable>
+						<DValue value="6" type="procVarId"></DValue>
+					</Variable>
+				</ParamValue>
+			</ParamValueSet>
+			<ParamValueSet Name="Parameter Set Import Data"></ParamValueSet>
+			<ParamValueSet Name="Parameter Set Results"></ParamValueSet>
+			<ParamValueSet Name="param_test"></ParamValueSet>
+		</ParamValueSetCntnr>
+		<ObjectDependencies>
+			<ImgLayers>
+				<ChnlProxyCntnr>
+					<Layers>
+						<ChnlProxy strName="Layer 1" flags="4">
+							<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+						</ChnlProxy>
+						<ChnlProxy strName="Layer 2" flags="4">
+							<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+						</ChnlProxy>
+						<ChnlProxy strName="Layer 3" flags="4">
+							<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+						</ChnlProxy>
+						<ChnlProxy strName="Layer 4" flags="4">
+							<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+						</ChnlProxy>
+						<ChnlProxy strName="Layer 5" flags="4">
+							<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+						</ChnlProxy>
+					</Layers>
+					<Variables>
+						<ChnlProxy strName="var_nir" flags="5">
+							<DValue type="img_chnl" value="Layer 4" scope=""></DValue>
+							<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+						</ChnlProxy>
+						<ChnlProxy strName="var_red" flags="5">
+							<DValue type="img_chnl" value="Layer 3" scope=""></DValue>
+							<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+						</ChnlProxy>
+						<ChnlProxy strName="var_green" flags="5">
+							<DValue type="img_chnl" value="Layer 2" scope=""></DValue>
+							<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+						</ChnlProxy>
+						<ChnlProxy strName="var_swir" flags="5">
+							<DValue type="img_chnl" value="Layer 5" scope=""></DValue>
+							<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+						</ChnlProxy>
+						<ChnlProxy strName="var_blue" flags="5">
+							<DValue type="img_chnl" value="Layer 1" scope=""></DValue>
+							<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+						</ChnlProxy>
+					</Variables>
+				</ChnlProxyCntnr>
+			</ImgLayers>
+			<ThmLayers>
+				<ChnlProxyCntnr>
+					<Layers></Layers>
+					<Variables></Variables>
+				</ChnlProxyCntnr>
+			</ThmLayers>
+			<MapLvlProxyCntnr>
+				<MapLvlProxies></MapLvlProxies>
+				<MapLvlVrblValues></MapLvlVrblValues>
+			</MapLvlProxyCntnr>
+			<ProcVrblCntnr>
+				<ProcVrbl iId="1" eType="1">
+					<DValue value="0.27000000000000001776356839400250464678" type="double"></DValue>
+					<NameExpr strTextExpr="th_water"></NameExpr>
+					<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+					<SharedInfo bShared="0" strInstGUID=""></SharedInfo>
+				</ProcVrbl>
+				<ProcVrbl iId="2" eType="1">
+					<DValue value="0.11000000000000000055511151231257827021" type="double"></DValue>
+					<NameExpr strTextExpr="th_built"></NameExpr>
+					<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+					<SharedInfo bShared="0" strInstGUID=""></SharedInfo>
+				</ProcVrbl>
+				<ProcVrbl iId="3" eType="1">
+					<DValue value="2.9999999999999998889776975374843459576e-002" type="double"></DValue>
+					<NameExpr strTextExpr="th_barren"></NameExpr>
+					<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+					<SharedInfo bShared="0" strInstGUID=""></SharedInfo>
+				</ProcVrbl>
+				<ProcVrbl iId="4" eType="1">
+					<DValue value="0." type="double"></DValue>
+					<NameExpr strTextExpr="{:Variable:export_string_var}\results\{:Item.Name}\{:Project.Name}.v{:Project.Ver}.{:Ext}"></NameExpr>
+					<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+					<SharedInfo bShared="0" strInstGUID=""></SharedInfo>
+				</ProcVrbl>
+				<ProcVrbl iId="5" eType="1">
+					<DValue value="D:\" type="string"></DValue>
+					<NameExpr strTextExpr="export_string_var}"></NameExpr>
+					<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+					<SharedInfo bShared="0" strInstGUID=""></SharedInfo>
+				</ProcVrbl>
+				<ProcVrbl iId="6" eType="1">
+					<DValue value="D:\" type="string"></DValue>
+					<NameExpr strTextExpr="export_string_var"></NameExpr>
+					<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+					<SharedInfo bShared="0" strInstGUID=""></SharedInfo>
+				</ProcVrbl>
+				<ProcVrbl iId="0" eType="1">
+					<DValue value="0.26000000000000000888178419700125232339" type="double"></DValue>
+					<NameExpr strTextExpr="th_veg"></NameExpr>
+					<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+					<SharedInfo bShared="0" strInstGUID=""></SharedInfo>
+				</ProcVrbl>
+			</ProcVrblCntnr>
+			<ClssHrchy EvalInvalid="1" MinProb="0.10000000000000000555111512312578270212" NNSlope="0.20000000000000001110223024625156540424" RdiResamplOptns="3">
+				<AllClss>
+					<Clss id="1" name="vegetation" flag="0" iMaskID="-1" bUsePrntClr="0" dPrntClssBrghtns="0." termType="0" strUserName="Adken" tChngTime="1659912769" bShow="0" Trans="0.">
+						<LcnsInfo sLcnsId="" sPwd=""></LcnsInfo>
+						<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+						<Color R="0" G="128" B="0"></Color>
+						<SharedInfo bShared="0" strInstGUID=""></SharedInfo>
+					</Clss>
+					<Clss id="2" name="water" flag="0" iMaskID="-1" bUsePrntClr="0" dPrntClssBrghtns="0." termType="0" strUserName="Adken" tChngTime="1659913136" bShow="0" Trans="0.">
+						<LcnsInfo sLcnsId="" sPwd=""></LcnsInfo>
+						<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+						<Color R="0" G="0" B="255"></Color>
+						<SharedInfo bShared="0" strInstGUID=""></SharedInfo>
+					</Clss>
+					<Clss id="3" name="built-up" flag="0" iMaskID="-1" bUsePrntClr="0" dPrntClssBrghtns="0." termType="0" strUserName="Adken" tChngTime="1659913735" bShow="0" Trans="0.">
+						<LcnsInfo sLcnsId="" sPwd=""></LcnsInfo>
+						<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+						<Color R="255" G="255" B="0"></Color>
+						<SharedInfo bShared="0" strInstGUID=""></SharedInfo>
+					</Clss>
+					<Clss id="4" name="barren" flag="0" iMaskID="-1" bUsePrntClr="0" dPrntClssBrghtns="0." termType="0" strUserName="Adken" tChngTime="1659913826" bShow="0" Trans="0.">
+						<LcnsInfo sLcnsId="" sPwd=""></LcnsInfo>
+						<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+						<Color R="255" G="128" B="0"></Color>
+						<SharedInfo bShared="0" strInstGUID=""></SharedInfo>
+					</Clss>
+				</AllClss>
+				<PropTree version="20100426">
+					<AllProps>
+						<PropDscr Flag="65538" strUserName="Adken" tChngTime="1659990031" group_id="ext.geom.object.prop">
+							<PropDscrId GUID="AF0D7167-ADE8-4240-AAA4-AC2C188E9AF5" InstID="Number of pixels"></PropDscrId>
+							<LcnsInfo sLcnsId="" sPwd=""></LcnsInfo>
+							<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+							<Params></Params>
+						</PropDscr>
+						<PropDscr Flag="2147483650" strUserName="Adken" tChngTime="1660048824" group_id="global.object.vrbl.vrbl_arr.prop">
+							<PropDscrId GUID="5EB15E4B-593A-432f-A0ED-9B38627475D2" InstID="export_string_var"></PropDscrId>
+							<LcnsInfo sLcnsId="" sPwd=""></LcnsInfo>
+							<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+							<Params>
+								<DValue value="_export_string_var" type="string" name="NameExpr"></DValue>
+								<DValue value="D:\" type="string" name="vVal"></DValue>
+								<DValue value="0" type="bool" name="bShared"></DValue>
+								<DValue value="" type="string" name="strInstGUID"></DValue>
+							</Params>
+						</PropDscr>
+						<PropDscr Flag="2147483650" strUserName="Adken" tChngTime="1660038873" group_id="global.object.vrbl.vrbl_arr.prop">
+							<PropDscrId GUID="5EB15E4B-593A-432f-A0ED-9B38627475D2" InstID="export_string_var}"></PropDscrId>
+							<LcnsInfo sLcnsId="" sPwd=""></LcnsInfo>
+							<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+							<Params>
+								<DValue value="_export_string_var}" type="string" name="NameExpr"></DValue>
+								<DValue value="D:\" type="string" name="vVal"></DValue>
+								<DValue value="0" type="bool" name="bShared"></DValue>
+								<DValue value="" type="string" name="strInstGUID"></DValue>
+							</Params>
+						</PropDscr>
+						<PropDscr Flag="2147483650" strUserName="Adken" tChngTime="1660038497" group_id="global.object.vrbl.vrbl_arr.prop">
+							<PropDscrId GUID="5EB15E4B-593A-432f-A0ED-9B38627475D2" InstID="{_Variable_export_string_var}\results\{_Item.Name}\{_Project.Name}.v{_Project.Ver}.{_Ext}"></PropDscrId>
+							<LcnsInfo sLcnsId="" sPwd=""></LcnsInfo>
+							<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+							<Params>
+								<DValue value="_{:Variable:export_string_var}\results\{:Item.Name}\{:Project.Name}.v{:Project.Ver}.{:Ext}" type="string" name="NameExpr"></DValue>
+								<DValue value="0." type="double" name="vVal"></DValue>
+								<DValue value="0" type="bool" name="bShared"></DValue>
+								<DValue value="" type="string" name="strInstGUID"></DValue>
+							</Params>
+						</PropDscr>
+						<PropDscr Flag="2" strUserName="Adken" tChngTime="1659993114" group_id="mean.chnl.object.prop">
+							<PropDscrId GUID="44411C83-609B-4758-93D3-FF62DF246855" InstID="Mean Layer 1"></PropDscrId>
+							<LcnsInfo sLcnsId="" sPwd=""></LcnsInfo>
+							<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+							<Params>
+								<DValue type="img_chnl" value="Layer 1" scope="" name="valChnl"></DValue>
+							</Params>
+						</PropDscr>
+						<PropDscr Flag="2147483650" strUserName="TIEDE" tChngTime="1454052375" group_id="lvlexist.obj.map.prop">
+							<PropDscrId GUID="261D7F03-7A1E-4671-A64F-F0A64CBBE81A" InstID="Existence of object level New Level"></PropDscrId>
+							<LcnsInfo sLcnsId="" sPwd=""></LcnsInfo>
+							<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+							<Params>
+								<DValue type="lvlName" name="valMapLvl">
+									<MapLvlProxy strName="New Level" bVrbl="0">
+									<Assignment MapLvl="1" MapName="main"></Assignment>
+									<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+									</MapLvlProxy>
+								</DValue>
+							</Params>
+						</PropDscr>
+					</AllProps>
+					<UserGroups></UserGroups>
+				</PropTree>
+				<Brightness>
+					<Map MapName="main">
+						<ChnlWghtBrght>
+							<BrghtWght val="1." chnl="0"></BrghtWght>
+							<BrghtWght val="1." chnl="1"></BrghtWght>
+							<BrghtWght val="1." chnl="2"></BrghtWght>
+							<BrghtWght val="1." chnl="3"></BrghtWght>
+							<BrghtWght val="1." chnl="4"></BrghtWght>
+							<BrghtWght val="0." chnl="5"></BrghtWght>
+							<BrghtWght val="0." chnl="6"></BrghtWght>
+							<BrghtWght val="0." chnl="7"></BrghtWght>
+							<BrghtWght val="0." chnl="8"></BrghtWght>
+						</ChnlWghtBrght>
+					</Map>
+				</Brightness>
+				<AllVrblClss></AllVrblClss>
+				<AllSubClss>
+					<Clss Id="1" PrfdGrp="1">
+						<SubClss></SubClss>
+						<SubGrp></SubGrp>
+					</Clss>
+					<Clss Id="2" PrfdGrp="2">
+						<SubClss></SubClss>
+						<SubGrp></SubGrp>
+					</Clss>
+					<Clss Id="3" PrfdGrp="3">
+						<SubClss></SubClss>
+						<SubGrp></SubGrp>
+					</Clss>
+					<Clss Id="4" PrfdGrp="4">
+						<SubClss></SubClss>
+						<SubGrp></SubGrp>
+					</Clss>
+				</AllSubClss>
+				<AllTerm>
+					<Term TermEvalType="0">
+						<TermBase ClssId="1" flags="0">
+							<Weight>
+								<DValue value="1" type="int"></DValue>
+							</Weight>
+						</TermBase>
+					</Term>
+					<Term TermEvalType="0">
+						<TermBase ClssId="2" flags="0">
+							<Weight>
+								<DValue value="1" type="int"></DValue>
+							</Weight>
+						</TermBase>
+					</Term>
+					<Term TermEvalType="0">
+						<TermBase ClssId="3" flags="0">
+							<Weight>
+								<DValue value="1" type="int"></DValue>
+							</Weight>
+						</TermBase>
+					</Term>
+					<Term TermEvalType="0">
+						<TermBase ClssId="4" flags="0">
+							<Weight>
+								<DValue value="1" type="int"></DValue>
+							</Weight>
+						</TermBase>
+					</Term>
+				</AllTerm>
+			</ClssHrchy>
+			<MapVrblCntnr></MapVrblCntnr>
+			<FtrListVrblCntnr></FtrListVrblCntnr>
+			<CoordVrblCntnr></CoordVrblCntnr>
+			<ROIVrblCntnr></ROIVrblCntnr>
+			<ImgObjListVrblCntnr></ImgObjListVrblCntnr>
+			<ArrayCntnr>
+				<Arrays></Arrays>
+				<ArrayVrbls></ArrayVrbls>
+			</ArrayCntnr>
+			<Smpls>
+				<AllClss>
+					<SmplList ClssId="1"></SmplList>
+					<SmplList ClssId="2"></SmplList>
+					<SmplList ClssId="3"></SmplList>
+					<SmplList ClssId="4"></SmplList>
+				</AllClss>
+				<AllProp></AllProp>
+			</Smpls>
+		</ObjectDependencies>
+		<CustProcAlgrList></CustProcAlgrList>
+		<ProcessList></ProcessList>
+		<ExportedItems></ExportedItems>
+		<LcnsIds></LcnsIds>
+	</eCog.Proc>
+	<ActionList>
+		<Action action-definition-guid="4A1ACCCB-17C2-11ED-99DF-548CA087852E" action-library-guid="97E1386B-17C1-11ED-99DF-548CA087852E" action-library-version="1." state="2" process-name="" LocalParamSet="0">
+			<ParamValueSet Name="Parameter Set Import"></ParamValueSet>
+			<additional-dependencies></additional-dependencies>
+		</Action>
+		<Action action-definition-guid="F7F5A9AC-1586-11ED-99DE-80E82CBBB280" action-library-guid="97E1386B-17C1-11ED-99DF-548CA087852E" action-library-version="1." state="2" process-name="" LocalParamSet="0">
+			<ParamValueSet Name="Parameter Set Vegetation">
+				<ParamValue name="var_nir" description="" type="variable">
+					<DValue type="img_chnl" value="Layer 4" scope=""></DValue>
+					<Variable>
+						<DValue type="rlstObjId" obj_type="img_layer" scope="" obj_name="var_nir"></DValue>
+					</Variable>
+				</ParamValue>
+				<ParamValue name="var_red" description="" type="variable">
+					<DValue type="img_chnl" value="Layer 3" scope=""></DValue>
+					<Variable>
+						<DValue type="rlstObjId" obj_type="img_layer" scope="" obj_name="var_red"></DValue>
+					</Variable>
+				</ParamValue>
+				<ParamValue name="th_veg" description="" type="variable">
+					<DValue value="0.26000000000000000888178419700125232339" type="double"></DValue>
+					<Variable>
+						<DValue value="0" type="procVarId"></DValue>
+					</Variable>
+				</ParamValue>
+			</ParamValueSet>
+			<additional-dependencies></additional-dependencies>
+		</Action>
+		<Action action-definition-guid="E091E8C6-15AD-11ED-99DE-80E82CBBB280" action-library-guid="97E1386B-17C1-11ED-99DF-548CA087852E" action-library-version="1." state="2" process-name="" LocalParamSet="0">
+			<ParamValueSet Name="Parameter Set Water">
+				<ParamValue name="var_nir" description="" type="variable">
+					<DValue type="img_chnl" value="Layer 4" scope=""></DValue>
+					<Variable>
+						<DValue type="rlstObjId" obj_type="img_layer" scope="" obj_name="var_nir"></DValue>
+					</Variable>
+				</ParamValue>
+				<ParamValue name="var_green" description="" type="variable">
+					<DValue type="img_chnl" value="Layer 2" scope=""></DValue>
+					<Variable>
+						<DValue type="rlstObjId" obj_type="img_layer" scope="" obj_name="var_green"></DValue>
+					</Variable>
+				</ParamValue>
+				<ParamValue name="th_water" description="" type="variable">
+					<DValue value="0.27000000000000001776356839400250464678" type="double"></DValue>
+					<Variable>
+						<DValue value="1" type="procVarId"></DValue>
+					</Variable>
+				</ParamValue>
+			</ParamValueSet>
+			<additional-dependencies></additional-dependencies>
+		</Action>
+		<Action action-definition-guid="277F35AB-15B6-11ED-99DE-80E82CBBB280" action-library-guid="97E1386B-17C1-11ED-99DF-548CA087852E" action-library-version="1." state="2" process-name="" LocalParamSet="0">
+			<ParamValueSet Name="Parameter Set Built-up">
+				<ParamValue name="var_nir" description="" type="variable">
+					<DValue type="img_chnl" value="Layer 4" scope=""></DValue>
+					<Variable>
+						<DValue type="rlstObjId" obj_type="img_layer" scope="" obj_name="var_nir"></DValue>
+					</Variable>
+				</ParamValue>
+				<ParamValue name="var_swir" description="" type="variable">
+					<DValue type="img_chnl" value="Layer 5" scope=""></DValue>
+					<Variable>
+						<DValue type="rlstObjId" obj_type="img_layer" scope="" obj_name="var_swir"></DValue>
+					</Variable>
+				</ParamValue>
+				<ParamValue name="th_built" description="" type="variable">
+					<DValue value="0.11000000000000000055511151231257827021" type="double"></DValue>
+					<Variable>
+						<DValue value="2" type="procVarId"></DValue>
+					</Variable>
+				</ParamValue>
+			</ParamValueSet>
+			<additional-dependencies></additional-dependencies>
+		</Action>
+		<Action action-definition-guid="BDDDA421-15C2-11ED-99DE-80E82CBBB280" action-library-guid="97E1386B-17C1-11ED-99DF-548CA087852E" action-library-version="1." state="2" process-name="" LocalParamSet="0">
+			<ParamValueSet Name="Parameter Set Barren">
+				<ParamValue name="var_blue" description="" type="variable">
+					<DValue type="img_chnl" value="Layer 1" scope=""></DValue>
+					<Variable>
+						<DValue type="rlstObjId" obj_type="img_layer" scope="" obj_name="var_blue"></DValue>
+					</Variable>
+				</ParamValue>
+				<ParamValue name="th_barren" description="" type="variable">
+					<DValue value="2.9999999999999998889776975374843459576e-002" type="double"></DValue>
+					<Variable>
+						<DValue value="3" type="procVarId"></DValue>
+					</Variable>
+				</ParamValue>
+			</ParamValueSet>
+			<additional-dependencies></additional-dependencies>
+		</Action>
+		<Action action-definition-guid="9D8A9572-17C2-11ED-99DF-548CA087852E" action-library-guid="97E1386B-17C1-11ED-99DF-548CA087852E" action-library-version="1." state="2" process-name="" LocalParamSet="0">
+			<ParamValueSet Name="Parameter Set Export">
+				<ParamValue name="export_string_var}" description="" type="variable">
+					<DValue value="D:\" type="string"></DValue>
+					<Variable>
+						<DValue value="5" type="procVarId"></DValue>
+					</Variable>
+				</ParamValue>
+				<ParamValue name="export_string_var" description="" type="variable">
+					<DValue value="D:\" type="string"></DValue>
+					<Variable>
+						<DValue value="6" type="procVarId"></DValue>
+					</Variable>
+				</ParamValue>
+			</ParamValueSet>
+			<additional-dependencies></additional-dependencies>
+		</Action>
+	</ActionList>
+</Analysis>

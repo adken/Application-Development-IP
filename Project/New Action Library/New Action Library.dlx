@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionLibrary version="1." guid="97E1386B-17C1-11ED-99DF-548CA087852E" name="New Action Library" author="" company="" read-only="0" default-solution="" 3d-look="1">
+	<Description></Description>
+	<Properties></Properties>
+	<BackwardCompatibility></BackwardCompatibility>
+	<ActionFilterList>
+		<ActionFilter id="E" red="128" green="128" blue="128" red_shade3D="255" green_shade3D="255" blue_shade3D="255" name="Import Data"></ActionFilter>
+		<ActionFilter id="A" red="0" green="128" blue="0" red_shade3D="255" green_shade3D="255" blue_shade3D="255" name="Vegetation Classification"></ActionFilter>
+		<ActionFilter id="B" red="0" green="0" blue="255" red_shade3D="255" green_shade3D="255" blue_shade3D="255" name="Water Classification"></ActionFilter>
+		<ActionFilter id="C" red="255" green="255" blue="0" red_shade3D="255" green_shade3D="255" blue_shade3D="255" name="Built-up Classification"></ActionFilter>
+		<ActionFilter id="D" red="255" green="128" blue="0" red_shade3D="255" green_shade3D="255" blue_shade3D="255" name="Barren Classification"></ActionFilter>
+		<ActionFilter id="F" red="128" green="128" blue="128" red_shade3D="255" green_shade3D="255" blue_shade3D="255" name="Export Results"></ActionFilter>
+	</ActionFilterList>
+	<ActionFileList>
+		<ActionFile file="WaterClassification.xml"></ActionFile>
+		<ActionFile file="VegetationClassification.xml"></ActionFile>
+		<ActionFile file="BuiltupClassification.xml"></ActionFile>
+		<ActionFile file="BarrenClassification.xml"></ActionFile>
+		<ActionFile file="ImportData.xml"></ActionFile>
+		<ActionFile file="ExportResults.xml"></ActionFile>
+	</ActionFileList>
+	<Preload></Preload>
+</ActionLibrary>

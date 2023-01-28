@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionFile>
+	<ActionDefinition name="Vegetation Classification" id="Vegetation" icon="" state-icon-variable="" filter="A" guid="F7F5A9AC-1586-11ED-99DE-80E82CBBB280" use_only_once="1" priority="0" can-remove="1">
+		<RuleSet file=""></RuleSet>
+		<Description>Interactively select NIR and Red bands from an image and&#xD;&#xA;calculate NDVI (Normalized Difference Vegetation Index) and using multi-threshold segmentation to automatically classify vegetation areas in the image. </Description>
+		<Process name="" parameter_set="Parameter Set Vegetation"></Process>
+		<Properties>
+			<Group text="Compute  Index" color="4802118" text_color="13948887" color_3dshade="2828328">
+				<SelectLayer text="NIR Band" left-margin="-1" description="Select Near Infra-Red layer" dscr="Select Near Infra-Red layer" variable="var_nir" image-layer="1" use-alias="1" process-sel-change="">
+					<visibility_threshold></visibility_threshold>
+					<enable_threshold></enable_threshold>
+				</SelectLayer>
+				<SelectLayer text="Red Band" left-margin="-1" description="Select Red Layer" dscr="Select Red Layer" variable="var_red" image-layer="1" use-alias="1" process-sel-change="">
+					<visibility_threshold></visibility_threshold>
+					<enable_threshold></enable_threshold>
+				</SelectLayer>
+				<Button text="" left-margin="-1" description="Calculate Normalized Difference Vegetation Index using selected NIR and Red image layers" img="" mode="push" button_text="Calculate NDVI" hor_offset="0" width="0">
+					<visibility_threshold></visibility_threshold>
+					<enable_threshold></enable_threshold>
+					<RuleSet file="Ruleset.dcp"></RuleSet>
+					<Process push="Index-Based Image Classification//Vegetation//NDVI" release=""></Process>
+					<Description>Calculate Normalized Difference Vegetation Index using selected NIR and Red image layers</Description>
+				</Button>
+			</Group>
+			<Group text="Classification" color="4802118" text_color="13948887" color_3dshade="2828328">
+				<EditSlider text="text" left-margin="-1" description="Select NDVI threshold to classify vegetation" variable="th_veg" dscr="Select NDVI threshold to classify vegetation" ruleset="D:\salzburg\cde\summer semester\3.Application Development (Object-based Image Analysis)\Project\Project\New Action Library\Ruleset.dcp" left-text="NDVI Threshold" right-text="" allow-value-outside-minmax="0">
+					<visibility_threshold></visibility_threshold>
+					<enable_threshold></enable_threshold>
+					<vrblMin>
+						<DValue value="-1." type="double"></DValue>
+					</vrblMin>
+					<vrblMax>
+						<DValue value="1." type="double"></DValue>
+					</vrblMax>
+					<vrblTickFreq>
+						<DValue value="0.10000000000000000555111512312578270212" type="double"></DValue>
+					</vrblTickFreq>
+					<vrblJump>
+						<DValue value="1.0000000000000000208166817117216851329e-002" type="double"></DValue>
+					</vrblJump>
+				</EditSlider>
+				<Button text="" left-margin="-1" description="Classify vegetation based on selected NDVI threshold" img="" mode="push" button_text="Classify Vegetation" hor_offset="0" width="0">
+					<visibility_threshold></visibility_threshold>
+					<enable_threshold></enable_threshold>
+					<RuleSet file="Ruleset.dcp"></RuleSet>
+					<Process push="Index-Based Image Classification//Vegetation//Classification" release=""></Process>
+					<Description>Classify vegetation based on selected NDVI threshold</Description>
+				</Button>
+			</Group>
+			<Group text="Description" color="4802118" text_color="13948887" color_3dshade="2828328">
+				<Description text="text" left-margin="-1" description="Description">
+					<visibility_threshold></visibility_threshold>
+					<enable_threshold></enable_threshold>
+				</Description>
+			</Group>
+			<ObjectDependencies>
+				<ImgLayers>
+					<ChnlProxyCntnr>
+						<Layers></Layers>
+						<Variables>
+							<ChnlProxy strName="var_nir" flags="5">
+								<DValue type="img_chnl" value=""></DValue>
+								<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+							</ChnlProxy>
+							<ChnlProxy strName="var_red" flags="5">
+								<DValue type="img_chnl" value=""></DValue>
+								<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+							</ChnlProxy>
+						</Variables>
+					</ChnlProxyCntnr>
+				</ImgLayers>
+				<ThmLayers>
+					<ChnlProxyCntnr>
+						<Layers></Layers>
+						<Variables></Variables>
+					</ChnlProxyCntnr>
+				</ThmLayers>
+				<MapLvlProxyCntnr>
+					<MapLvlProxies></MapLvlProxies>
+					<MapLvlVrblValues></MapLvlVrblValues>
+				</MapLvlProxyCntnr>
+				<ProcVrblCntnr>
+					<ProcVrbl iId="0" eType="1">
+						<DValue value="0.26000000000000000888178419700125232339" type="double"></DValue>
+						<NameExpr strTextExpr="th_veg"></NameExpr>
+						<Scope GUID="00000000-0000-0000-0000-000000000000"></Scope>
+						<SharedInfo bShared="0" strInstGUID=""></SharedInfo>
+					</ProcVrbl>
+				</ProcVrblCntnr>
+				<ClssHrchy EvalInvalid="1" MinProb="0.10000000000000000555111512312578270212" NNSlope="0.20000000000000001110223024625156540424" RdiResamplOptns="3">
+					<AllClss></AllClss>
+					<PropTree version="20100426">
+						<AllProps></AllProps>
+						<UserGroups></UserGroups>
+					</PropTree>
+					<Brightness>
+						<Map MapName="main">
+							<ChnlWghtBrght>
+								<BrghtWght val="1." chnl="0"></BrghtWght>
+								<BrghtWght val="1." chnl="1"></BrghtWght>
+								<BrghtWght val="1." chnl="2"></BrghtWght>
+								<BrghtWght val="1." chnl="3"></BrghtWght>
+								<BrghtWght val="1." chnl="4"></BrghtWght>
+								<BrghtWght val="0." chnl="5"></BrghtWght>
+								<BrghtWght val="0." chnl="6"></BrghtWght>
+								<BrghtWght val="0." chnl="7"></BrghtWght>
+								<BrghtWght val="0." chnl="8"></BrghtWght>
+							</ChnlWghtBrght>
+						</Map>
+					</Brightness>
+					<AllVrblClss></AllVrblClss>
+					<AllSubClss></AllSubClss>
+					<AllTerm></AllTerm>
+				</ClssHrchy>
+				<MapVrblCntnr></MapVrblCntnr>
+				<FtrListVrblCntnr></FtrListVrblCntnr>
+				<CoordVrblCntnr></CoordVrblCntnr>
+				<ROIVrblCntnr></ROIVrblCntnr>
+				<ImgObjListVrblCntnr></ImgObjListVrblCntnr>
+				<ArrayCntnr>
+					<Arrays></Arrays>
+					<ArrayVrbls></ArrayVrbls>
+				</ArrayCntnr>
+			</ObjectDependencies>
+		</Properties>
+		<Dependencies>
+			<ProjectStateRequired>
+				<SceneState></SceneState>
+				<ImgObjState></ImgObjState>
+			</ProjectStateRequired>
+			<ProjectStateAdd>
+				<SceneState></SceneState>
+				<ImgObjState></ImgObjState>
+			</ProjectStateAdd>
+			<ProjectStateRemoved>
+				<SceneState></SceneState>
+				<ImgObjState></ImgObjState>
+			</ProjectStateRemoved>
+			<ProjectStateForbidden>
+				<SceneState></SceneState>
+				<ImgObjState></ImgObjState>
+			</ProjectStateForbidden>
+		</Dependencies>
+	</ActionDefinition>
+</ActionFile>
